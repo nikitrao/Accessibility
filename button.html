@@ -1,0 +1,27 @@
+<script src="../webcomponentsjs/webcomponents-lite.js"></script>
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../paper-styles/color.html">
+
+<style is="custom-style">
+#container{
+	display:flex;
+}
+
+paper-button {
+	 font-family: 'Roboto', 'Noto', sans-serif;
+	 font-weight: normal;
+	 font-size: 14px;
+	-webkit-font-smoothing: antialiased;
+}
+
+paper-button.indigo {
+	    background-color: var(--paper-indigo-500);
+		        color: white;
+		}
+paper-button.indigo:hover {
+	      background-color: var(--paper-indigo-400);
+		 }
+paper-button.disabled {
+	color:white;
+}
+</style>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+	<!--<script type="text/javascript">window._trackJs = { token: '3c4c018bda5e4bc69b441da8f853dc71' };</script>
+	<script type="text/javascript" src="https://cdn.trackjs.com/releases/current/tracker.js"></script>
+	<script src="/sample/js/main.js"></script>-->
+	
+	<head>
+<style>
+form {
+	line-height:100%;
+		font-size:30px;
+}
+</style>
+		<title>Form using Polymer</title>
+		<!--<link rel="import" href="../webcomponentsjs/webcomponents-loader.js">-->
+		<link rel="import" href="../webcomponentsjs/webcomponents-lite.js">
+		<link rel="import" href="../paper-item/paper-item.html">
+		<!--<link rel="import" href="../paper-listbox/paper-listbox.html">-->
+		<link rel="import" href="../paper-dropdown-menu/paper-dropdown-menu.html">
+		<link rel="import" href="../neon-animation/web-animations.html">
+		<link rel="import" href="../iron-demo-helpers/demo-snippet.html">
+		<link rel="import" href="../iron-demo-helpers/demo-pages-shared-styles.html">
+		<link rel="import" href="../paper-dropdown-menu/demo/index.html">
+		<link rel="import" href="../web-component-tester/browser.js">
+		<link rel="import" href="../test-fixture/test-fixture-mocha.js">
+		<link rel="import" href="checkbox.html">
+		<link rel="import" href="plastic-input.html">
+		<link rel="import" href="paper-radio-button.html">
+		<link rel="import" href="iron-validate.html">
+		<link rel="import" href="button.html">
+		<link rel="stylesheet" href="style.css" type="text/css">
+		<!--<script src="https://cdn.accesslint.com/accesslint-1.1.2.js"></script>-->
+<custom-style><style is="custom-style" include="demo-pages-shared-styles">
+paper-tabs,paper-dropdown-menu,paper-listbox{
+	width: 400px;
+}
+paper-dropdown-menu{
+	height: 200px;
+			display:block;
+}
+body {
+	font-family: Roboto, Helvetica, sans-serif;
+	background-color:white;
+	padding:40px;
+	<!--background-image: url("cisco.jpg");-->
+	background-repeat : no-repeat;
+	height: 100%;
+	background-position : center;
+	background-size: cover;
+	opacity :0.9;
+}
+:root {
+	--shared-background-color:#bada55;
+}
+#rad {
+	line-height:50px;
+	font-size: 20px;
+	}
+h1,h2 {
+	color: Indigo;
+	}
+#sub-container{
+	color: red;
+	font-size: 20px;
+	}
+#cisco {
+	font-color: rgb(23,32,42);
+}
+#drop {
+	color: rgb(91,44,111);
+}
+.topnav {
+	overflow: hidden;
+	background-color: #333;
+	}
+.topnav a{
+	float: left;
+	display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+	</style>
+</custom-style>
+
+<script>
+/*describe('<paper-radio-button>', function() {
+var radio;
+
+beforeEach(function() {
+radio = fixture('NoLabel');
+});
+});*/
+
+//a11ySuite('NoLabel');
+</script>
+	</head>
+	
+	
+	<body>
+	<div class="topnav">
+		<a class="active" href="#home">Home</a>
+		<a href="#news">News</a>
+		<a href="#contact">Contact</a>
+		<a href="#about">About</a>
+	</div>
+		<h1 align="center">Welcome to Cisco!!</h1>
+		<h2 align="center"> Please sign-up to use Cisco's resources </h2>
+		<!--<a href="https://www.w3.org/WAI/intro/wcag">read more</a>-->
+		<div style="width:100%;overflow:auto;">
+		<form id="cisco">
+		<div style="float:left; width: 50%">
+			<b>First Name:</b><br>
+			<!--<plastic-input id="firstname"></plastic-input><br><br>
+			<b>Middle Name:</b><br>
+			<plastic-input></plastic-input><br><br>
+			<b>Last Name:</b><br>
+			<plastic-input></plastic-input><br><br>-->
+			<input type="text"></input><br>
+		<b>Interests:</b></br>
+		<paper-checkbox></paper-checkbox></br><br>
+		<b>Gender:</b><br>
+		<paper-radio-button id="rad"></paper-radio-button><br><br>
+		<b>Select Country:</b><br>
+		<paper-dropdown-menu label="Country" id="drop">
+			<paper-listbox slot="dropdown-content" selected="1">
+			<paper-item role="option" tabindex="0" aria-disabled="false" id="owned_listbox">India</paper-item>
+			<paper-item role="option" tabindex="-1" aria-disabled="false">Germany</paper-item>
+			<paper-item role="option" tabindex="-1" aria-disabled="false">Sri-Lanka</paper-item>
+			<paper-item role="option" tabindex="-1" aria-disabled="false">America</paper-item>
+			<paper-item role="option" tabindex="-1" aria-disabled="false">Singapore</paper-item>
+			<paper-item role="option" tabindex="-1" aria-disabled="false" id="selected_option">London</paper-item>
+			</paper-listbox>
+			</paper-dropdown-menu><br>
+			<div id="container">
+			<paper-button class="indigo">Save</paper-button>
+			<paper-button class="indigo">Cancel</paper-button>
+		</div>
+		</form>
+		</div>
+		<div style="float:right;" id="sub-container">
+		<marquee direction="up">
+		<h3>Accessibility Testing Using Jenkins</h3>
+		<p> In my past experience I have been working on accessible websites</p> 
+		<p>and implementing accessibility standards to make a website accessible</p>
+		<p>for all users, whether they have disabilities of some kind or not.</p>
+		<p>While making any web page or website accessible, the major challenge</p>
+		<p>is to write code and test it against accessibility standards like </p>
+		<p>Accessibility Standard US Sec 508 and WCAG2.0.</p>
+		</marquee>
+		</div>
+		</div>
+	</body>
+</html>

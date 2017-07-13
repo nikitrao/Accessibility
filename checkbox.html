@@ -1,0 +1,46 @@
+<link rel="import" href="../paper-checkbox/paper-checkbox.html">
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../iron-input/iron-input.html">
+<link rel="import" href="../web-component-tester/browser.js">
+<link rel="import" href="../web-component-tester/data/a11ySuite.js">
+<link rel="import" href="../test-fixture/test-fixture-mocha.js">
+<dom-module id="paper-checkbox">
+	<test-fixture id="NoLabel">
+	<template>
+		<iron-input>
+			<input is="iron-input" type="checkbox" name="Interests" value="Gaming" checked>Gaming<br>
+			<input is="iron-input" type="checkbox" name="Interests" value="Coding">Coding<br>
+			<input is="iron-input" type="checkbox" name="Interests" value="Travelling">Travelling<br>
+		</iron-input>
+	<style>
+	:host {
+		line-height:50px;
+		font-size: 20px;
+		}
+	</style>
+	</template>
+	</test-fixture>
+	<script>
+class PaperCheckbox extends Polymer.Element{
+	static get is(){
+		return "paper-checkbox";
+	}
+	constructor()
+	{
+		super();
+	}
+}
+suite('<paper-checkbox>',function() {
+	var c1;
+	setup(function() {
+		c1=fixture('NoLabel');
+	});
+	test('check checkbox via click',function(done) {
+		c1.addEventListener('click',function() {
+			assert.isTrue(c1.checked);
+			done();
+		});
+		MockInteractions.tap(c1);
+	});
+});
+</script>

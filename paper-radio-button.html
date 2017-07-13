@@ -1,0 +1,24 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../paper-radio-button/paper-radio-button.html">
+<link rel="import" href="../iron-input/iron-input.html">
+<dom-module id="paper-radio-button">
+	<template>
+		<iron-input>
+			<input is="iron-input" type="radio" name="gender" value="male" checked>Male<br>
+			<input is="iron-input" type="radio" name="gender" value="female">Female<br>
+			<input is="iron-input" type="radio" name="gender" value="other">Other<br>
+		</iron-input>
+	</template>
+	<script>
+class PaperRadioButton extends Polymer.Element{
+	static get is(){
+		return "paper-radio-button";
+	}
+	constructor()
+	{
+		super();
+	}
+}
+//customElements.define(PaperRadioButton.is,PaperRadioButton);
+	</script>
+</dom-module>

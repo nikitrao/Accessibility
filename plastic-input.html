@@ -1,0 +1,52 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../iron-input/iron-input.html">
+<dom-module id="plastic-input">
+	<template>
+		<iron-input>
+			<input is="iron-input" id="name" type="text" placeholder="Your Name here">
+		</iron-input>
+<style is="custom-style">
+	#name {
+		width: 100%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		display: inline-block;
+		border: 1px solid #ccc;
+		border-radius: 2px;
+		box-sizing: border-box;
+	}
+	::-webkit-input-placeholder {
+		color: red;
+	}
+</style>
+	</template>
+<script>
+HTMLImports.whenReady(function() {
+class PlasticInput extends Polymer.Element {
+	static get is(){
+		return 'plastic-input';
+	}
+	static get properties(){
+		return {
+			     hostAttributes: {
+					     type:String,
+					     value:'',
+					     role:'input'
+				     },
+			     behaviors: [
+				     Polymer.PaperInput
+					     ]
+		};
+	}
+	constructor(){
+		super();
+	}
+	connectedCallback(){
+		super.connectedCallback();
+		console.log('plastic-input created!');
+	}
+}
+customElements.define(PlasticInput.is,PlasticInput);
+});
+</script>
+</dom-module>

@@ -1,0 +1,28 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../paper-listbox/paper-listbox.html">
+<!--<link rel="import" href="../iron-input/iron-input.html">-->
+<dom-module id="paper-dropdown-menu">
+	<template>
+		<paper-dropdown-menu label="Country">
+			<paper-listbox slot="dropdown-content" class="dropdown-content">
+				<paper-item>India</paper-item>
+				<paper-item>Pakistan</paper-item>
+				<paper-item>America</paper-item>
+				<paper-item>Singapore</paper-item>
+				<paper-item>London</paper-item>
+			</paper-listbox>
+		</paper-dropdown-menu>
+	</template>
+<script>
+class PaperDropdownMenu extends Polymer.Element{
+	static get is(){
+		return "paper-dropdown-menu";
+	}
+	constructor()
+	{
+		super();
+	}
+}
+</script>
+</dom-module>
